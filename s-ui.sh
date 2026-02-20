@@ -30,10 +30,10 @@ echo "🔑 目标私钥路径: $NEW_KEY"
 # 4. 修改 SQLite 数据库中的 setting 表
 echo "⚙️  正在将新路径写入 s-ui 数据库..."
 
-sqlite3 "$DB_PATH" "UPDATE setting SET value = '$NEW_CERT' WHERE key = 'webCertFile';"
-sqlite3 "$DB_PATH" "UPDATE setting SET value = '$NEW_KEY' WHERE key = 'webKeyFile';"
-sqlite3 "$DB_PATH" "UPDATE setting SET value = '$NEW_CERT' WHERE key = 'subCertFile';"
-sqlite3 "$DB_PATH" "UPDATE setting SET value = '$NEW_KEY' WHERE key = 'subKeyFile';"
+sqlite3 "$DB_PATH" "UPDATE settings SET value = '$NEW_CERT' WHERE key = 'webCertFile';"
+sqlite3 "$DB_PATH" "UPDATE settings SET value = '$NEW_KEY' WHERE key = 'webKeyFile';"
+sqlite3 "$DB_PATH" "UPDATE settings SET value = '$NEW_CERT' WHERE key = 'subCertFile';"
+sqlite3 "$DB_PATH" "UPDATE settings SET value = '$NEW_KEY' WHERE key = 'subKeyFile';"
 
 echo "✅ 数据库更新完毕！"
 
